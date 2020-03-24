@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.52.2/lib/codemirror.min.css">
+    <link rel="stylesheet" href="https://codemirror.net/theme/dracula.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" rel="stylesheet" />
+    <title>HTML PlayGround - girls code better</title>
+</head>
+<body>
+    <div id="app" @keypress="removeError">
+        <textarea id="code-editor"></textarea>
+        <div class="container">
+            <div v-if="error" class="notification is-danger">
+                <button class="delete"></button> {{error}}
+            </div>
+            <div v-if="output" class="notification is-primary">
+                <button class="delete"></button> {{output}}
+            </div>
+            <iframe id="preview" class="container"></iframe>
+        </div>
+        <div id="mybutton">
+            <button @click="run" class="run"><img src="https://img.icons8.com/flat_round/64/000000/play--v1.png"/></button>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            
+        </div>
+    </footer>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.js" integrity="sha256-id5Qk/MwQJxgNlDFDpVymUuReXfTUZiaQKb8arrddQM=" crossorigin="anonymous"></script>
+<script src="https://codemirror.net/mode/xml/xml.js"></script>
+<script src="https://codemirror.net/mode/css/css.js"></script>
+<script src="https://codemirror.net/mode/javascript/javascript.js"></script>
+<script src="https://codemirror.net/mode/htmlmixed/htmlmixed.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="playground.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js"></script>
+</html>
